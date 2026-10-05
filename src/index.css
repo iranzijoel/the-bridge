@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The Bridge Installation Group Electronics - Electric/Energetic Theme
+   Bold yellows and blacks with electric accents
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Electric Yellow/Black Theme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+
+    /* Electric Yellow as primary */
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 5%;
+
+    /* Dark charcoal secondary */
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 48 100% 50%;
+
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 40%;
+
+    /* Electric accent - slightly orange yellow */
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 48 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom electric gradients */
+    --gradient-electric: linear-gradient(135deg, hsl(48 100% 50%), hsl(45 100% 60%));
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 5%), hsl(0 0% 15%));
+    --shadow-electric: 0 4px 20px -5px hsl(48 100% 50% / 0.4);
+    --shadow-glow: 0 0 30px hsl(48 100% 50% / 0.3);
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 48 100% 50%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 45 100% 55%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 48 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient-electric {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-electric {
+    background: var(--gradient-electric);
+  }
+
+  .shadow-electric {
+    box-shadow: var(--shadow-electric);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .electric-border {
+    @apply border-2 border-primary;
+  }
+}
